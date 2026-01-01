@@ -1,0 +1,1221 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 0;
+    display: block;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #8b7355;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 180px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s;
+    padding: 10px 0;
+    margin-top: 5px;
+}
+
+.nav-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    padding: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #555;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f8f8f8;
+    color: #8b7355;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #2c3e50;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 50vw;
+    max-height: 600px;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.worship-schedule {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    margin-left: 50px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    max-width: 650px;
+}
+
+.worship-schedule h2 {
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.schedule-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    column-gap: 40px;
+    row-gap: 12px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+.service-name {
+    font-weight: 500;
+    color: #2c3e50;
+    font-size: 16px;
+    text-align: left;
+}
+
+.service-time {
+    color: #666;
+    font-size: 15px;
+    text-align: left;
+    min-width: 90px;
+}
+
+.service-venue {
+    color: #666;
+    font-size: 15px;
+    text-align: left;
+    min-width: 70px;
+}
+
+/* Vision Section */
+.vision-section {
+    padding: 100px 0;
+    background-color: #f8f8f8;
+}
+
+.vision-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.vision-image {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.vision-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vision-text h2 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.vision-main {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.vision-verse {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.vision-reference {
+    font-size: 14px;
+    color: #8b7355;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #8b7355;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.read-more-btn:hover {
+    background-color: #6b5a42;
+}
+
+/* Worship Section */
+.worship-section {
+    padding: 100px 0;
+    background-color: #fff;
+}
+
+.section-title {
+    font-size: 36px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.worship-content {
+    display: flex;
+    justify-content: center;
+}
+
+.worship-video {
+    width: 100%;
+    max-width: 800px;
+}
+
+.video-placeholder {
+    background-color: #f0f0f0;
+    padding: 100px 40px;
+    text-align: center;
+    border-radius: 8px;
+    border: 2px dashed #ccc;
+}
+
+.video-placeholder p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.youtube-link {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #c4302b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.youtube-link:hover {
+    background-color: #a02622;
+}
+
+/* Notice Section */
+.notice-section {
+    padding: 100px 0;
+    background-color: #f8f8f8;
+}
+
+.notice-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.notice-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 4px solid #8b7355;
+}
+
+.notice-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.notice-date {
+    font-size: 14px;
+    color: #8b7355;
+    font-weight: 500;
+    min-width: 60px;
+    margin-right: 20px;
+}
+
+.notice-title {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.footer-section p {
+    font-size: 15px;
+    line-height: 2;
+    color: #e0e0e0;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: #b0b0b0;
+    font-size: 14px;
+}
+
+/* Page Section Styles (for subpages) */
+.page-section {
+    padding: 80px 0;
+    min-height: 60vh;
+    background-color: #fff;
+}
+
+.page-title {
+    font-size: 36px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.page-content {
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #555;
+}
+
+.page-content h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.page-content p {
+    margin-bottom: 15px;
+}
+
+/* Vision Page Styles */
+.vision-page-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.vision-page-title {
+    font-size: 36px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.vision-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.vision-hero-image {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.vision-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vision-hero-text h2 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.vision-hero-main {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.vision-hero-verse {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.vision-hero-reference {
+    font-size: 14px;
+    color: #8b7355;
+    font-weight: 500;
+}
+
+.vision-content-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.vision-content-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.vision-content-block.reverse {
+    direction: rtl;
+}
+
+.vision-content-block.reverse > * {
+    direction: ltr;
+}
+
+.vision-content-text h3 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.vision-content-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.vision-content-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.vision-content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Staff Page Styles */
+.staff-list {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.staff-member {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 30px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.staff-image {
+    width: 200px;
+    height: 200px;
+}
+
+.staff-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.staff-image-placeholder::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.staff-image-placeholder::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: #d0d0d0;
+    border-radius: 50% 50% 0 0;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.staff-info h3 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.staff-info p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Worship Page Styles */
+.worship-page-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.worship-schedule-section,
+.worship-info-section,
+.worship-video-section {
+    margin-bottom: 60px;
+}
+
+.worship-section-title {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.worship-schedule-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.worship-info-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #555;
+}
+
+.worship-info-content p {
+    margin-bottom: 20px;
+}
+
+.worship-video-section {
+    margin-bottom: 0;
+}
+
+.worship-video-section .worship-video {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Centered worship schedule for dawn and wednesday pages */
+.page-content .worship-schedule {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Contact Button in Navigation */
+.contact-btn {
+    border: 1px solid #2c3e50;
+    border-radius: 4px;
+    padding: 8px 16px !important;
+    margin-left: 10px;
+}
+
+.contact-btn:hover {
+    background-color: #2c3e50;
+    color: #fff !important;
+}
+
+/* Contact Form Styles */
+.contact-form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: 'Noto Sans KR', sans-serif;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8b7355;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #8b7355;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #6b5a42;
+}
+
+.success-message {
+    text-align: center;
+    padding: 40px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #2c3e50;
+    line-height: 1.8;
+}
+
+/* Newcomer Page Styles */
+.newcomer-intro {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    text-align: center;
+    padding: 40px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.bible-verse {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.bible-reference {
+    font-size: 16px;
+    color: #8b7355;
+    font-weight: 500;
+}
+
+.newcomer-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.newcomer-section {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: #8b7355;
+    line-height: 1;
+    min-width: 60px;
+}
+
+.section-content h3 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.section-content p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* Responsive Design */
+/* Tablet and below (mobile menu) */
+@media (max-width: 968px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 20px 0;
+        gap: 0;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-link {
+        padding: 15px 20px;
+        display: block;
+        width: 100%;
+    }
+
+    .contact-btn {
+        margin-left: 0 !important;
+        border: none !important;
+        border-radius: 0 !important;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .vision-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .vision-image {
+        height: 300px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .worship-schedule {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 30px;
+    }
+
+    .vision-hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .vision-hero-image {
+        height: 300px;
+    }
+
+    .vision-content-block {
+        grid-template-columns: 1fr;
+    }
+
+    .vision-content-block.reverse {
+        direction: ltr;
+    }
+
+    .staff-member {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .staff-image {
+        margin: 0 auto;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero-section {
+        height: 60vw;
+        min-height: 350px;
+    }
+
+    .worship-schedule {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 25px;
+        max-width: 100%;
+    }
+
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    .logo a {
+        font-size: 20px;
+    }
+
+    .logo-img {
+        height: 32px;
+    }
+
+    .worship-schedule h2 {
+        font-size: 24px;
+    }
+
+    .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .service-name {
+        font-size: 14px;
+        min-width: auto;
+    }
+
+    .service-time {
+        font-size: 13px;
+        min-width: auto;
+    }
+
+    .service-venue {
+        font-size: 13px;
+        min-width: auto;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .vision-text h2 {
+        font-size: 28px;
+    }
+
+    .vision-main {
+        font-size: 16px;
+    }
+
+    .vision-hero-text h2 {
+        font-size: 28px;
+    }
+
+    .vision-hero-main {
+        font-size: 16px;
+    }
+
+    .vision-content-text h3 {
+        font-size: 20px;
+    }
+
+    .staff-member {
+        padding: 20px;
+    }
+
+    .staff-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .worship-section-title {
+        font-size: 24px;
+    }
+
+    .worship-schedule-box {
+        padding: 30px 20px;
+    }
+
+    .newcomer-sections {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .section-number {
+        font-size: 36px;
+        min-width: 50px;
+    }
+
+    .contact-form-container {
+        padding: 30px 20px;
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
+
+    .vision-page-title {
+        font-size: 28px;
+    }
+
+    .page-section {
+        padding: 60px 0;
+    }
+
+    .vision-page-section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .newcomer-intro {
+        padding: 30px 20px;
+    }
+
+    .bible-verse {
+        font-size: 16px;
+    }
+
+    .newcomer-section {
+        padding: 20px;
+    }
+
+    .section-number {
+        font-size: 36px;
+        min-width: 50px;
+    }
+
+    .section-content h3 {
+        font-size: 18px;
+    }
+
+    .section-content p {
+        font-size: 14px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .hero-section {
+        height: 70vw;
+        min-height: 300px;
+    }
+
+    .worship-schedule {
+        padding: 20px 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .worship-schedule h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+
+    .vision-page-title {
+        font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .vision-hero-text h2 {
+        font-size: 24px;
+    }
+
+    .vision-content-text h3 {
+        font-size: 18px;
+    }
+
+    .contact-form-container {
+        padding: 20px 15px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+/* Desktop view - ensure proper display */
+@media (min-width: 969px) {
+    .nav-menu {
+        display: flex !important;
+        position: static !important;
+        flex-direction: row !important;
+        background-color: transparent !important;
+        width: auto !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        left: auto !important;
+        top: auto !important;
+    }
+
+    .hamburger {
+        display: none !important;
+    }
+
+    .nav-item {
+        width: auto !important;
+        border-bottom: none !important;
+    }
+
+    .nav-link {
+        padding: 10px 0 !important;
+        width: auto !important;
+    }
+
+    .contact-btn {
+        margin-left: 10px !important;
+        border: 1px solid #2c3e50 !important;
+        border-radius: 4px !important;
+        padding: 8px 16px !important;
+    }
+}
+
+/* Touch-friendly buttons on mobile */
+@media (max-width: 768px) {
+    button,
+    .submit-btn,
+    .read-more-btn,
+    .youtube-link,
+    .contact-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    a {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
