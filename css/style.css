@@ -885,12 +885,14 @@ img {
         flex-direction: column;
         background-color: #fff;
         width: 100%;
-        text-align: center;
+        text-align: left;
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 20px 0;
         gap: 0;
         z-index: 999;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
     }
 
     .nav-menu.active {
@@ -912,6 +914,32 @@ img {
         margin-left: 0 !important;
         border: none !important;
         border-radius: 0 !important;
+    }
+
+    /* Dropdown menus on mobile - show as expanded */
+    .dropdown-menu {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        box-shadow: none !important;
+        background-color: #f8f8f8 !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        display: none;
+    }
+
+    .nav-item.active .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu li {
+        border-bottom: 1px solid #e8e8e8;
+    }
+
+    .dropdown-menu a {
+        padding: 12px 40px;
+        color: #555;
     }
 
     .hamburger {
@@ -1001,22 +1029,37 @@ img {
 
     .schedule-item {
         grid-template-columns: 1fr;
-        gap: 8px;
+        gap: 6px;
+        padding: 12px 0;
     }
 
     .service-name {
-        font-size: 14px;
+        font-size: 15px;
+        font-weight: 600;
         min-width: auto;
+        margin-bottom: 4px;
     }
 
     .service-time {
-        font-size: 13px;
+        font-size: 14px;
         min-width: auto;
+        padding-left: 0;
     }
 
     .service-venue {
-        font-size: 13px;
+        font-size: 14px;
         min-width: auto;
+        padding-left: 0;
+    }
+
+    .service-time::before {
+        content: "시간: ";
+        font-weight: 500;
+    }
+
+    .service-venue::before {
+        content: "장소: ";
+        font-weight: 500;
     }
 
     .section-title {
@@ -1118,6 +1161,54 @@ img {
     .section-content p {
         font-size: 14px;
     }
+
+    .video-placeholder {
+        padding: 60px 20px;
+    }
+
+    .video-placeholder p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .youtube-link {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .notice-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .notice-date {
+        margin-bottom: 8px;
+        margin-right: 0;
+    }
+
+    .notice-title {
+        font-size: 15px;
+    }
+
+    .footer-section {
+        margin-bottom: 30px;
+    }
+
+    .footer-section h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .footer-section p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .read-more-btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
 }
 
 /* Small mobile devices */
@@ -1131,11 +1222,25 @@ img {
         padding: 20px 15px;
         margin-left: 10px;
         margin-right: 10px;
+        max-width: calc(100% - 20px);
     }
 
     .worship-schedule h2 {
         font-size: 20px;
         margin-bottom: 20px;
+    }
+
+    .schedule-item {
+        padding: 10px 0;
+    }
+
+    .service-name {
+        font-size: 14px;
+    }
+
+    .service-time,
+    .service-venue {
+        font-size: 13px;
     }
 
     .page-title {
@@ -1175,6 +1280,28 @@ img {
     .submit-btn {
         padding: 12px;
         font-size: 15px;
+    }
+
+    .video-placeholder {
+        padding: 50px 15px;
+    }
+
+    .video-placeholder p {
+        font-size: 13px;
+    }
+
+    .youtube-link {
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+
+    .notice-item {
+        padding: 12px;
+    }
+
+    .read-more-btn {
+        padding: 10px 25px;
+        font-size: 14px;
     }
 }
 
