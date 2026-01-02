@@ -22,3 +22,6 @@ This website is hosted on GitHub Pages and is publicly accessible.
 - `js/` - JavaScript files
 - `Image files/` - All website images
 
+## Website URL
+
+Visit the live website at: https://e-tentmakers.github.io/Sample-Website/
