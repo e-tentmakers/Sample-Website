@@ -803,6 +803,17 @@ img {
     line-height: 1.8;
 }
 
+.error-message {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #856404;
+    line-height: 1.8;
+}
+
 /* Newcomer Page Styles */
 .newcomer-intro {
     max-width: 900px;
