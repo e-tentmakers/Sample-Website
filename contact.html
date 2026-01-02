@@ -80,8 +80,16 @@
         <div class="container">
             <h1 class="page-title">문의하기</h1>
             <div class="contact-form-container">
-                <form id="contact-form" action="https://formspree.io/f/xzkpvdjd" method="POST">
-                    <input type="hidden" name="_to" value="my_yoo@hotmail.com">
+                <!-- 
+                    FORMPREE SETUP INSTRUCTIONS:
+                    1. Go to https://formspree.io and login with: miyoung@alumni.cmu.edu
+                    2. Click "New Form" or select an existing form
+                    3. In the Integration tab, find "Your form's endpoint is:"
+                    4. Copy the form ID from the URL (e.g., https://formspree.io/f/YOUR_FORM_ID)
+                    5. Replace "YOUR_FORM_ID_HERE" below with your actual form ID
+                    6. Set the recipient email in Formspree settings to: my_yoo@hotmail.com
+                -->
+                <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
                     <input type="hidden" name="_subject" value="샘플교회 문의하기">
                     <input type="hidden" name="_next" value="?success=true">
                     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
@@ -203,7 +211,7 @@
                             
                             // If it's a form ID error, provide helpful message
                             if (response.status === 404 || response.status === 400) {
-                                errorMsg.innerHTML = '<p><strong>폼 설정 오류가 발생했습니다.</strong></p><p style="font-size: 14px; margin-top: 10px; color: #666;">Formspree 폼 ID가 올바르지 않을 수 있습니다. 관리자에게 문의하거나 이메일로 직접 문의해주세요: samplechurch@gmail.com</p>';
+                                errorMsg.innerHTML = '<p><strong>폼 설정 오류가 발생했습니다.</strong></p><p style="font-size: 14px; margin-top: 10px; color: #666;">Formspree 폼 ID가 올바르지 않습니다. <br><br><strong>해결 방법:</strong><br>1. https://formspree.io 에 로그인 (miyoung@alumni.cmu.edu)<br>2. 새 폼 생성 또는 기존 폼 선택<br>3. Integration 탭에서 폼 ID 확인<br>4. contact.html 파일의 "YOUR_FORM_ID_HERE"를 실제 폼 ID로 교체<br><br>자세한 내용은 FORMPREE_SETUP.md 파일을 참고하세요.</p>';
                             }
                         }).catch(() => {
                             // If JSON parsing fails, still show error
