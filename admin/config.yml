@@ -1,0 +1,101 @@
+backend:
+  name: github
+  repo: e-tentmakers/Sample-Website # Format: username/repo-name
+  branch: main # Branch to update
+  base_url: https://e-tentmakers.github.io/Sample-Website
+  auth_scope: repo # GitHub OAuth scope
+  api_root: https://api.github.com
+  site_domain: e-tentmakers.github.io
+
+media_folder: "Image files" # Media files will be stored in the repo under Image files
+public_folder: "Image files" # The src attribute for uploaded media will begin with /Image files
+
+collections:
+  - name: "homepage" # Used in routes, e.g., /admin/collections/homepage
+    label: "Homepage"
+    folder: "content/homepage"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Worship Schedule Background Image", name: "heroBackgroundImage", widget: "image", required: false}
+      - {label: "Vision Section Image", name: "visionImage", widget: "image", required: false}
+      - {label: "Vision Title", name: "visionTitle", widget: "string", default: "OUR VISION"}
+      - {label: "Vision Main Text", name: "visionMain", widget: "text"}
+      - {label: "Vision Verse", name: "visionVerse", widget: "text"}
+      - {label: "Vision Reference", name: "visionReference", widget: "string"}
+      - {label: "YouTube Link", name: "youtubeLink", widget: "string", required: false}
+      - {label: "YouTube Video Text", name: "youtubeText", widget: "string", default: "YouTube 영상 혹은 예배 동영상이 여기에 표시됩니다"}
+
+  - name: "worship-schedule"
+    label: "Worship Schedule"
+    folder: "content/worship-schedule"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Service Name", name: "serviceName", widget: "string"}
+      - {label: "Time", name: "time", widget: "string"}
+      - {label: "Venue", name: "venue", widget: "string"}
+
+  - name: "notices"
+    label: "Notices"
+    folder: "content/notices"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Date", name: "date", widget: "string", default: "2025"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Link", name: "link", widget: "string", default: "pages/board/notice.html"}
+
+  - name: "footer"
+    label: "Footer"
+    folder: "content/footer"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Address", name: "address", widget: "string"}
+      - {label: "Phone", name: "phone", widget: "string"}
+      - {label: "Email", name: "email", widget: "string"}
+      - label: "Donation Accounts"
+        name: "donations"
+        widget: "list"
+        fields:
+          - {label: "Type", name: "type", widget: "string"}
+          - {label: "Account", name: "account", widget: "string"}
+
+  - name: "vision-page"
+    label: "Vision Page"
+    folder: "content/vision-page"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Vision Image", name: "visionImage", widget: "image", required: false}
+      - {label: "Vision Text", name: "visionText", widget: "markdown"}
+      - {label: "Mission Image", name: "missionImage", widget: "image", required: false}
+      - {label: "Mission Text", name: "missionText", widget: "markdown"}
+      - {label: "Values Image", name: "valuesImage", widget: "image", required: false}
+      - {label: "Values Text", name: "valuesText", widget: "markdown"}
+
+  - name: "staff"
+    label: "Staff Members"
+    folder: "content/staff"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Email", name: "email", widget: "string"}
+      - {label: "Photo", name: "photo", widget: "image", required: false}
+
+  - name: "worship-pages"
+    label: "Worship Pages"
+    folder: "content/worship-pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Page Title", name: "pageTitle", widget: "string"}
+      - {label: "Time", name: "time", widget: "string"}
+      - {label: "Venue", name: "venue", widget: "string"}
+      - {label: "Description", name: "description", widget: "markdown", required: false}
+      - {label: "YouTube Link", name: "youtubeLink", widget: "string", required: false}
