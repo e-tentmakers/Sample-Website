@@ -1,13 +1,6 @@
 backend:
-  name: github
-  repo: e-tentmakers/Sample-Website # Format: username/repo-name
+  name: git-gateway
   branch: main # Branch to update
-  base_url: https://e-tentmakers.github.io/Sample-Website
-  auth_scope: repo # GitHub OAuth scope
-  api_root: https://api.github.com
-  site_domain: e-tentmakers.github.io
-  # For GitHub Pages, use proxy to handle OAuth callbacks
-  proxy_url: https://e-tentmakers.github.io/Sample-Website/admin/
 
 media_folder: "Image files" # Media files will be stored in the repo under Image files
 public_folder: "Image files" # The src attribute for uploaded media will begin with /Image files
